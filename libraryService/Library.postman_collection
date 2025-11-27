@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "7404e713-0852-462a-8f2e-7d5f81449eac",
+		"name": "Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "50209950",
+		"_collection_link": "https://soybar9-1066123.postman.co/workspace/Soybar-12's-Workspace~9dcc13a6-4b9a-406b-8dde-0c0a88cd8366/collection/50209950-7404e713-0852-462a-8f2e-7d5f81449eac?action=share&source=collection_link&creator=50209950"
+	},
+	"item": [
+		{
+			"name": "Article",
+			"item": [
+				{
+					"name": "Create Article",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2OGY5YTE5NC1hMzEyLTQ1OTYtYWMwYy00MzlhNjIwMGIyNjEiLCJ1c2VybmFtZSI6ImZpZGEiLCJyb2xlIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3NjM2NjA3OTEsImV4cCI6MTc2MzcwMzk5MX0.UHpjNp0MWR_g3DfOdhm2XFjMBPXiiNPiuDqbzp8vmvI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Artikel Punya Fida Special Edition\",\r\n    \"content\": \"Ini isi artikel Punya Fida Special Edition\"\r\n    // ,\"publicArticle\": true\r\n    //   ,\"authorId\": \"01e3d3e1-c0f9-44e2-9bb3-c3b63e2d557f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/articles/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Article",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2OGY5YTE5NC1hMzEyLTQ1OTYtYWMwYy00MzlhNjIwMGIyNjEiLCJ1c2VybmFtZSI6ImZpZGEiLCJyb2xlIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3NjM2NTM4NDgsImV4cCI6MTc2MzY5NzA0OH0.9d2ZhOG1MMZTTK8d9zQpu-rkxUEWD4SceWOGcY0dziY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"5853bd91-d733-4d4e-9de1-6faa665077ee\",\r\n    \"title\": \"Artikel Kedua\",\r\n    \"content\": \"Ini isi artikel AGA PANJANGGGGGG\"\r\n    // ,\"authorId\": \"Fida 002\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/articles/update"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Article desc",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2OGY5YTE5NC1hMzEyLTQ1OTYtYWMwYy00MzlhNjIwMGIyNjEiLCJ1c2VybmFtZSI6ImZpZGEiLCJyb2xlIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3NjM2NTM4NDgsImV4cCI6MTc2MzY5NzA0OH0.9d2ZhOG1MMZTTK8d9zQpu-rkxUEWD4SceWOGcY0dziY",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/articles/getAll/desc"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Article asc",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWUzZDNlMS1jMGY5LTQ0ZTItOWJiMy1jM2I2M2UyZDU1N2YiLCJ1c2VybmFtZSI6InVkaW4iLCJyb2xlIjoiRURJVE9SIiwiaWF0IjoxNzYzNjQwNDI3LCJleHAiOjE3NjM2ODM2Mjd9.vdQIakTHVqWdVNG7fpIDyFD1g_VlkdmxnGnlF6-9Um8",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/articles/getAll/asc"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Article",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2OGY5YTE5NC1hMzEyLTQ1OTYtYWMwYy00MzlhNjIwMGIyNjEiLCJ1c2VybmFtZSI6ImZpZGEiLCJyb2xlIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3NjM2NTM4NDgsImV4cCI6MTc2MzY5NzA0OH0.9d2ZhOG1MMZTTK8d9zQpu-rkxUEWD4SceWOGcY0dziY",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/articles/delete/0ed26f8d-ec61-4545-8327-557641eb5c83"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Register User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2OGY5YTE5NC1hMzEyLTQ1OTYtYWMwYy00MzlhNjIwMGIyNjEiLCJ1c2VybmFtZSI6ImZpZGEiLCJyb2xlIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3NjM2NTM4NDgsImV4cCI6MTc2MzY5NzA0OH0.9d2ZhOG1MMZTTK8d9zQpu-rkxUEWD4SceWOGcY0dziY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"atep\",\r\n  \"email\": \"atep@testmail.com\",\r\n  \"password\": \"P@ssw0rd\",\r\n  \"fullName\": \"ATEP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/users/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All User asc",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2OGY5YTE5NC1hMzEyLTQ1OTYtYWMwYy00MzlhNjIwMGIyNjEiLCJ1c2VybmFtZSI6ImZpZGEiLCJyb2xlIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3NjM2NjA3OTEsImV4cCI6MTc2MzcwMzk5MX0.UHpjNp0MWR_g3DfOdhm2XFjMBPXiiNPiuDqbzp8vmvI",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/users/getAll/asc"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All User desc",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWUzZDNlMS1jMGY5LTQ0ZTItOWJiMy1jM2I2M2UyZDU1N2YiLCJ1c2VybmFtZSI6InVkaW4iLCJyb2xlIjoiRURJVE9SIiwiaWF0IjoxNzYzNjY4MzgxLCJleHAiOjE3NjM3MTE1ODF9.BQeTTMMr7IRWLw16bXCYQiQ0j5nz6PUiGaIdpLjh0Gg",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/users/getAll/desc"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2OGY5YTE5NC1hMzEyLTQ1OTYtYWMwYy00MzlhNjIwMGIyNjEiLCJ1c2VybmFtZSI6ImZpZGEiLCJyb2xlIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3NjM2MjcyOTYsImV4cCI6MTc2MzY3MDQ5Nn0.NE_J09keHZS8j4D369q3OtLtzKRF8_yAEK63_VrEX40",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"01e3d3e1-c0f9-44e2-9bb3-c3b63e2d557f\",\r\n    \"username\": \"udin\",\r\n    \"email\": \"udin@testmail.com\",\r\n    \"fullName\": \"UDIN SELAMANYA\",\r\n    \"role\": \"EDITOR\",\r\n    \"password\": \"P@ssw0rd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/users/update"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2OGY5YTE5NC1hMzEyLTQ1OTYtYWMwYy00MzlhNjIwMGIyNjEiLCJ1c2VybmFtZSI6ImZpZGEiLCJyb2xlIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3NjM2MjcyOTYsImV4cCI6MTc2MzY3MDQ5Nn0.NE_J09keHZS8j4D369q3OtLtzKRF8_yAEK63_VrEX40",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/users/delete/39266ea2-10bb-43dc-b7fc-d4186c86f359"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"qwqwe\",\r\n  \"password\": \"P@ssw0rd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"fida\",\r\n  \"otp\": \"892521\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/users/verify-otp"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Audit Log",
+			"item": [
+				{
+					"name": "Get All Audit Log desc",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2OGY5YTE5NC1hMzEyLTQ1OTYtYWMwYy00MzlhNjIwMGIyNjEiLCJ1c2VybmFtZSI6ImZpZGEiLCJyb2xlIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3NjM2NDI0ODgsImV4cCI6MTc2MzY4NTY4OH0.cyD2lzOC5bO0ENQ6KVTHSaLP9TSsvDj_0tODaMN7esA",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8080/audit/logs/desc"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Audit Log asc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2OGY5YTE5NC1hMzEyLTQ1OTYtYWMwYy00MzlhNjIwMGIyNjEiLCJ1c2VybmFtZSI6ImZpZGEiLCJyb2xlIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3NjM2NDI0ODgsImV4cCI6MTc2MzY4NTY4OH0.cyD2lzOC5bO0ENQ6KVTHSaLP9TSsvDj_0tODaMN7esA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/audit/logs/asc"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

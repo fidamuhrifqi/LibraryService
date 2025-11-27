@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: library-service
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/library_db
+      SPRING_DATASOURCE_USERNAME: library_user
+      SPRING_DATASOURCE_PASSWORD: FidaAdmin
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+
+  postgres:
+    image: postgres:16
+    container_name: postgres-local
+    environment:
+      POSTGRES_DB: library_db
+      POSTGRES_USER: library_user
+      POSTGRES_PASSWORD: FidaAdmin
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  redis:
+    image: redis:7
+    container_name: redis-local
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
