@@ -173,7 +173,7 @@ Email Password 	: Test123123!
 * Make sure Docker is installed and running on your device or you can download on https://www.docker.com/products/docker-desktop
 * Make sure WSL is installed on your device.
 	
-	1. Run using run.bat (recommended)
+	1. Run using run.bat (only os window device)
 	   Double click on run.bat
 	2. Manual build & run (optional)
 	   - BUILD jar Spring Boot *already builded you can skip it
@@ -194,4 +194,5 @@ Run unit tests:
 
 Fida Muhamad Rifqi
 Backend Engineer – Java Spring Boot
+
 Indonesia
